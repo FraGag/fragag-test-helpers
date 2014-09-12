@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>ca.fragag</groupId>
-  <artifactId>java-template</artifactId>
+  <artifactId>fragag-test-helpers</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>java-template</name>
-  <url>https://github.com/FraGag/java-template</url>
+  <name>fragag-test-helpers</name>
+  <url>https://github.com/FraGag/fragag-test-helpers</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,4 +26,17 @@
       </plugin>
     </plugins>
   </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <version>2.0.2</version>
+    </dependency>
+  </dependencies>
 </project>
