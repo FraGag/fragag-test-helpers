@@ -29,7 +29,7 @@ public abstract class ObjectHashCodeEqualsContract {
     @Nonnull
     protected final Object anotherEqualObject;
 
-    /** An object that is not equal (by {@link Object#equals(Object)} to the other objects. */
+    /** An array of objects that are not equal (by {@link Object#equals(Object)} to the other objects. */
     @CheckForNull
     protected final Object[] differentObjects;
 
@@ -47,6 +47,28 @@ public abstract class ObjectHashCodeEqualsContract {
      */
     protected ObjectHashCodeEqualsContract(@Nonnull Object mainObject, @Nonnull Object otherEqualObject,
             @Nonnull Object anotherEqualObject, @CheckForNull Object... differentObjects) {
+        if (mainObject == null) {
+            throw new NullPointerException("mainObject");
+        }
+
+        if (otherEqualObject == null) {
+            throw new NullPointerException("otherEqualObject");
+        }
+
+        if (anotherEqualObject == null) {
+            throw new NullPointerException("anotherEqualObject");
+        }
+
+        if (differentObjects == null) {
+            throw new NullPointerException("differentObjects");
+        }
+
+        for (int i = 0; i < differentObjects.length; i++) {
+            if (differentObjects[i] == null) {
+                throw new NullPointerException("differentObjects[" + i + "]");
+            }
+        }
+
         this.mainObject = mainObject;
         this.otherEqualObject = otherEqualObject;
         this.anotherEqualObject = anotherEqualObject;
